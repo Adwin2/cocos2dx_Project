@@ -30,22 +30,29 @@ private:
     Value _value;      // 数值
     bool _faceUp;      // 是否正面朝上
     int _id;           // 卡牌唯一标识
+    int _layer;        // 所在层级 (0=第一层, 1=第二层, 2=第三层)
+    int _gridIndex;    // 在网格中的索引位置
 
 public:
     CardModel();
     CardModel(Suit suit, Value value, int id = 0);
-    
+    CardModel(Suit suit, Value value, int id, int layer, int gridIndex);
+
     // Getter方法
     Suit getSuit() const { return _suit; }
     Value getValue() const { return _value; }
     bool isFaceUp() const { return _faceUp; }
     int getId() const { return _id; }
-    
+    int getLayer() const { return _layer; }
+    int getGridIndex() const { return _gridIndex; }
+
     // Setter方法
     void setSuit(Suit suit) { _suit = suit; }
     void setValue(Value value) { _value = value; }
     void setFaceUp(bool faceUp) { _faceUp = faceUp; }
     void setId(int id) { _id = id; }
+    void setLayer(int layer) { _layer = layer; }
+    void setGridIndex(int gridIndex) { _gridIndex = gridIndex; }
     
     // 翻牌
     void flip() { _faceUp = !_faceUp; }

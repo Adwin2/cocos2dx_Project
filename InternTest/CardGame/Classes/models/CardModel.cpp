@@ -1,12 +1,17 @@
 #include "CardModel.h"
 
 CardModel::CardModel()
-    : _suit(HEARTS), _value(ACE), _faceUp(true), _id(0)
+    : _suit(HEARTS), _value(ACE), _faceUp(true), _id(0), _layer(0), _gridIndex(0)
 {
 }
 
 CardModel::CardModel(Suit suit, Value value, int id)
-    : _suit(suit), _value(value), _faceUp(true), _id(id)
+    : _suit(suit), _value(value), _faceUp(true), _id(id), _layer(0), _gridIndex(0)
+{
+}
+
+CardModel::CardModel(Suit suit, Value value, int id, int layer, int gridIndex)
+    : _suit(suit), _value(value), _faceUp(true), _id(id), _layer(layer), _gridIndex(gridIndex)
 {
 }
 

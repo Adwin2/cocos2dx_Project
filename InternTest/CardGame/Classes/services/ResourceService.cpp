@@ -2,7 +2,7 @@
 
 // 资源路径常量定义
 const std::string ResourceService::Paths::CARD_BACKGROUND = "res/card_general.png";
-const std::string ResourceService::Paths::CARD_BACK = "res/card_general.png";  // 暂时使用同一张图片作为背面
+const std::string ResourceService::Paths::CARD_BACK = "res/card_back.png";  // 使用专门的卡牌背面图片
 
 const std::string ResourceService::Paths::SUIT_HEARTS = "res/suits/heart.png";
 const std::string ResourceService::Paths::SUIT_DIAMONDS = "res/suits/diamond.png";
@@ -66,10 +66,16 @@ ResourceService::CardResources ResourceService::getCardResources(const CardModel
 void ResourceService::preloadCardResources()
 {
     auto textureCache = Director::getInstance()->getTextureCache();
-    
-    // 预加载卡牌背景
+
+    // 预加载卡牌背景和背面
     textureCache->addImage(Paths::CARD_BACKGROUND);
     textureCache->addImage(Paths::CARD_BACK);
+
+    // 验证背面图片是否存在
+    if (!isResourceExists(Paths::CARD_BACK))
+    {
+        CCLOG("Warning: Card back image not found: %s", Paths::CARD_BACK.c_str());
+    }
     
     // 预加载花色图片
     textureCache->addImage(Paths::SUIT_HEARTS);
