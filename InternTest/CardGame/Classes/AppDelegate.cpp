@@ -43,8 +43,9 @@ using namespace CocosDenshion;
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(1920, 980);
-// static cocos2d::Size designResolutionSize = cocos2d::Size(2080, 1080);
+// 便于录屏展示
+// static cocos2d::Size designResolutionSize = cocos2d::Size(1920, 980);
+static cocos2d::Size designResolutionSize = cocos2d::Size(2080, 1080);
 
 AppDelegate::AppDelegate()
 {
