@@ -32,15 +32,18 @@ public:
      * 为游戏模型生成初始卡牌
      * @param gameModel 游戏数据模型
      * @param mainCardCount 主牌区卡牌数量
+     * @param bottomCardCount 底牌区卡牌数量
+     * @param spareCardCount 备用牌区卡牌数量
+      
      */
-    static void generateInitialCards(GameModel& gameModel, int mainCardCount);
+    static void generateInitialCards(GameModel& gameModel, int mainCardCount, int bottomCardCount, int spareCardCount);
     
     /**
-     * 生成新的底牌
+     * 添加一张随机主牌到主牌栈（统一栈式接口）
      * @param gameModel 游戏数据模型
      */
-    static void generateNewBottomCard(GameModel& gameModel);
-    
+    static void addRandomCardbyNumAndWhere(int num, int where, GameModel& gameModel);
+
     /**
      * 生成指定花色和数值的卡牌
      * @param suit 花色
@@ -51,13 +54,6 @@ public:
     static CardModel generateCard(CardModel::Suit suit, CardModel::Value value, int id = 0);
     
     /**
-     * 生成一副完整的扑克牌（不包含大小王）
-     * @param startId 起始ID
-     * @return 完整的扑克牌列表
-     */
-    static std::vector<CardModel> generateFullDeck(int startId = 1);
-    
-    /**
      * 洗牌算法
      * @param cards 要洗的卡牌列表
      */
@@ -66,6 +62,9 @@ public:
 private:
     CardGeneratorService() = delete;  // 禁止实例化
     
+    static const int _Bottom = 1;
+    static const int _Spare = 2;
+    static const int _Main = 3;
     /**
      * 生成随机花色
      * @return 随机花色

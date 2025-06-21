@@ -37,18 +37,6 @@ std::string CardModel::getValueString() const
     }
 }
 
-std::string CardModel::getSuitString() const
-{
-    switch (_suit)
-    {
-        case HEARTS: return "♥";
-        case DIAMONDS: return "♦";
-        case CLUBS: return "♣";
-        case SPADES: return "♠";
-        default: return "";
-    }
-}
-
 bool CardModel::operator==(const CardModel& other) const
 {
     return _suit == other._suit && _value == other._value;

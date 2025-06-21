@@ -64,9 +64,6 @@ public:
     // 获取数值字符串表示
     std::string getValueString() const;
     
-    // 获取花色字符串表示
-    std::string getSuitString() const;
-    
     // 比较操作
     bool operator==(const CardModel& other) const;
     bool operator!=(const CardModel& other) const;

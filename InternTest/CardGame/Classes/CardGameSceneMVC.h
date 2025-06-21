@@ -18,13 +18,12 @@ private:
     // UI元素
     Label* _scoreLabel;                       // 分数标签
     Label* _levelLabel;                       // 关卡标签
-    Label* _instructionLabel;                 // 说明标签
-    Label* _gameStatusLabel;                  // 游戏状态标签
     
     // 菜单
     Menu* _gameMenu;                          // 游戏菜单
     MenuItemLabel* _restartItem;              // 重新开始按钮
-    MenuItemLabel* _hintItem;                 // 提示按钮
+    // MVP版本：删除Hint功能
+    // MenuItemLabel* _hintItem;              // 已删除
     MenuItemImage* _closeItem;                // 关闭按钮
     
     Size _visibleSize;                        // 可见区域大小
@@ -40,24 +39,9 @@ public:
     void createLabels();
     void createMenu();
     
-    // 更新UI
-    void updateScoreDisplay(int score);
-    void updateLevelDisplay(int level);
-    void updateGameStatusDisplay(const std::string& status);
-    
-    // 游戏事件处理
-    void onGameWin();
-    void onGameOver();
-    void onScoreUpdate(int score);
-    
     // 菜单回调
     void onRestartClicked(Ref* sender);
-    void onHintClicked(Ref* sender);
     void onCloseClicked(Ref* sender);
-    
-    // 显示消息
-    void showMessage(const std::string& message, const Color3B& color = Color3B::WHITE);
-    void hideMessage();
 
 private:
     // 初始化游戏控制器
