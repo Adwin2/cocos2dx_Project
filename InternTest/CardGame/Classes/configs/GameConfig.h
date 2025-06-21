@@ -50,11 +50,6 @@ public:
     struct ColorSettings
     {
         static const Color3B BACKGROUND_COLOR;          // 背景颜色
-        static const Color3B RED_CARD_COLOR;            // 红色卡牌颜色
-        static const Color3B BLACK_CARD_COLOR;          // 黑色卡牌颜色
-        static const Color3B CARD_BACK_COLOR;           // 卡牌背面颜色
-        static const Color3B SCORE_TEXT_COLOR;          // 分数文字颜色
-        static const Color3B WIN_TEXT_COLOR;            // 胜利文字颜色
     };
     
     // 位置配置
