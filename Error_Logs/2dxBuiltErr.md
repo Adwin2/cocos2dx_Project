@@ -24,7 +24,7 @@ make -j$(nproc)
 
 2、在Ubuntu20.04中编译该版本Chipmunk源代码时，将cpHastySpace.c包含的头文件中的`#include <sys/sysctl.h>` 使用`#ifdef _APPLE_`包装起来，即：
 
-```bash
+```c++
 #ifdef __APPLE__
 #include <sys/sysctl.h>
 #endif
