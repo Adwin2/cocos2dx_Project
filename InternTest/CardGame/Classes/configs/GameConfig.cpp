@@ -22,13 +22,8 @@ const int GameConfig::UISettings::MAIN_CARD_COLS = 5;
 const int GameConfig::UISettings::MAIN_CARD_ROWS = 3;
 const float GameConfig::UISettings::MAIN_CARD_SPACING = 150.0f;
 
-// 颜色配置实现
+// 颜色配置实现 初始测试牌背使用的颜色配置
 const Color3B GameConfig::ColorSettings::BACKGROUND_COLOR = Color3B(0, 100, 0);
-const Color3B GameConfig::ColorSettings::RED_CARD_COLOR = Color3B::RED;
-const Color3B GameConfig::ColorSettings::BLACK_CARD_COLOR = Color3B::BLACK;
-const Color3B GameConfig::ColorSettings::CARD_BACK_COLOR = Color3B::BLUE;
-const Color3B GameConfig::ColorSettings::SCORE_TEXT_COLOR = Color3B::WHITE;
-const Color3B GameConfig::ColorSettings::WIN_TEXT_COLOR = Color3B::YELLOW;
 
 // 位置配置实现
 const Vec2 GameConfig::PositionSettings::BOTTOM_CARD_OFFSET = Vec2(960, -250);
